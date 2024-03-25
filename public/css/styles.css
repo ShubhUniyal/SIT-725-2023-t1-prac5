@@ -1,0 +1,32 @@
+.navbar-size {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.user-image-size {
+    height: 56px;
+    margin: 4px 0;
+}
+
+.header {
+    font-size: 3.5rem;
+}
+
+.card {
+    margin: 10px 0;
+}
+
+.card-image img {
+    height: 200px;
+}
+
+.click-me-button {
+    width: 120px;
+    margin-top: 10px;
+    background-color: #EE6E73
+}
+.materialboxed-image {
+    margin: 0 auto; 
+    height: 200px;
+    margin-bottom: 20px;
+    }
