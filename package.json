@@ -1,5 +1,5 @@
 {
-  "name": "task4.1p",
+  "name": "task4.2p",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.1"
+    "express": "^4.19.1",
+    "mongodb": "^6.5.0"
   }
 }

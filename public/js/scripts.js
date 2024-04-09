@@ -18,15 +18,22 @@ const clickMe = () => {
     alert("Thanks for clicking me. Hope you have a nice day!")
 }
 const submitForm = () => {
-    let formData = {};
-    formData.first_name = $('#first_name').val();
-    formData.last_name = $('#last_name').val();
-    formData.password = $('#password').val();
-    formData.email = $('#email').val();
-    console.log("Form Data Submitted: ", formData);
-    $('#modal1').modal('close');
+    let formData = {
+        name: $('#card_title').val() + ' ' + $('#card_by').val(),
+        desc: $('#card_desc').val(),
+        img: $('#card_img').val() // Provide a default image URL or fetch from user input
+    };
 
-}
+    // Send form data to the server
+    $.post('/api/addCard', formData, (response) => {
+        if (response.statusCode == 200) {
+            getcards();
+            $('#modal1').modal('close');
+        } else {
+            alert('Failed to add card. Please try again.');
+        }
+    });
+};
 
 const getcards = () => {
     $.get('/api/cards', (response) => {
@@ -38,6 +45,7 @@ const getcards = () => {
 
 const addCards = (cards) => {
     let cardsContainer = $("#card-container");
+    cardsContainer.html('');
     cards.forEach((card) => {
         cardsContainer.append(createCard(card.name, card.desc, card.img));
     });
