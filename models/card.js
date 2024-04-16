@@ -1,5 +1,4 @@
 const { client } = require('../dbconnection');
-
 const collection = client.db().collection('Cards');
 
 async function getAllCards() {

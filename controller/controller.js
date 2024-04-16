@@ -10,6 +10,7 @@ async function getAllCards(req, res) {
     }
 }
 
+
 async function addCard(req, res) {
     try {
         const { name, desc, img } = req.body;
